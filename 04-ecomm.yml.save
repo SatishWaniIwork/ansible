@@ -1,0 +1,14 @@
+- name: Host web
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: install git
+    package:
+      name: git
+      state: present
+  - name: deploy
+    git:
+      dest: /var/www/html
+      repo: https://github.com/ravi2krishna/ecomm.git
+  
