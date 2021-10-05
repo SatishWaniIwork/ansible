@@ -1,0 +1,16 @@
+- name: updateub
+  hosts: all
+
+  tasks:
+  - name: create dir
+    file:
+      path: /home/ubuntu/w2
+      state: directory
+  - name: create dir
+    file:
+      path: /home/ubuntu/w3
+      state: directory
+  - name: create dir
+    file:
+      path: /home/ubuntu/w4
+      state: directory
