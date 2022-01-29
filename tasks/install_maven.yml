@@ -1,0 +1,16 @@
+- name: Install and configure maven on all web servers
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: Install Maven 
+    apt:  
+     name: "{{ packages }}"
+     state: present
+    vars:
+     packages:
+      - maven
+  - name: Deamon repload
+    command: systemctl daemon-reload
+  - name: start Maven service
+    service: name=maven state=started    
