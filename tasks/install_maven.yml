@@ -10,7 +10,3 @@
     vars:
      packages:
       - maven
-  - name: Deamon repload
-    command: systemctl daemon-reload
-  - name: start Maven service
-    service: name=maven state=started    
